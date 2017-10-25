@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
+    @contact = Contact.find_by(id: params[:contact_id])
     @message = Message.new
   end
 

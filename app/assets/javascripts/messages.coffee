@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  $('#message_contact_ids').multiselect()
+  $('select#message_contact_ids').multiselect()
   return
