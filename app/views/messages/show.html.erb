@@ -1,0 +1,20 @@
+<div class="page-header">
+  <%= link_to messages_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <h1>Show message</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Message Body:</dt>
+  <dd><%= @message.body %></dd>
+
+  <dt>Contacts:</dt>
+  <dd>
+    <% @message.contacts.each do |contact| %>
+      <%= link_to contact.name, contact_path(contact) %>
+    <% end %>
+  </dd>
+
+</dl>

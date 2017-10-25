@@ -1,0 +1,17 @@
+<div class="page-header">
+  <div class="container">
+    <%= link_to contacts_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-user-conversation"></span>
+      Manage Contacts
+    <% end %>
+    <h2><%= @contacts_count %> Contacts</h2>
+  </div>
+
+  <div class="container">
+    <%= link_to messages_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-conversation"></span>
+      Manage Messages
+    <% end %>
+    <h2><%= @messages_count %> Messages</h2>
+  </div>
+</div>

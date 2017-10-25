@@ -1,0 +1,31 @@
+<div class="page-header">
+  <%= link_to new_message_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Message
+  <% end %>
+  <h1>Listing messages</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Message</th>
+        <th>Contacts</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @messages) do |message| %>
+        <td><%= message.body %></td>
+        <td>
+          <% message.contacts.each do |contact| %>
+            <%= link_to contact.name, contact_path(contact) %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', message %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,86 @@
+<%= form_for(@contact, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @contact.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h4>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :first_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :first_name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :last_name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_mobile, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :phone_mobile, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :street_address, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :street_address, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :city, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :state, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :state, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zip_code, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :zip_code, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :is_starred, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :is_starred, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :birth_month, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :birth_month, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :birth_day, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :birth_day, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
